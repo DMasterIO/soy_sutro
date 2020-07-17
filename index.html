@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Sepa si es sutro o no, de forma inmediata y totalmente gratuíta.">
+        <title>Soy Sutro?</title>
+        <style type="text/css">
+            img.sutro{
+                height: 200px;
+                width: 200px;
+            }
+        </style>
+        <script>
+            function randomNumber(min, max) {
+                return Math.round(Math.random() * (max - min) + min);
+            }
+            
+            document.addEventListener("DOMContentLoaded", function(event) { 
+                sutro = randomNumber(1, 2) == 2 ? true : false;
+                response = '<h1 id=yesno>'.concat(sutro ? 'SI!' : 'NO').concat('</h1>');
+                response+= '<img class="sutro" src="assets/img/'.concat(sutro ? 'si' : 'no').concat('_sutro.png" alt="').concat(sutro ? "Si eres sutro" : "No eres sutro").concat('">');
+                document.getElementById("response").innerHTML = response
+            });
+        </script>
+        <link 
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous"
+        >
+    </head>
+    <body>
+        <div class="container text-center">
+            <div class="col-xs-12">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h4>&iquest;SOY SUTRO?</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div id="response"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
